@@ -17,10 +17,9 @@ $ npm install -g gatsby-cli
 ```
 $ gatsby new (サイト名)
 ```
-途中でyarnかnpmのどちらを使うか聞かれますが、このサンプルを使う場合はyarnを選択します。
+途中でyarnかnpmのどちらを使うか聞かれるが、このサンプルを使う場合はyarnを選択する。
 
 ```
-$ gatsby new my-site
 ? Which package manager would you like to use ? › - Use arrow-keys. Return to submit.
 ❯   yarn
     npm
