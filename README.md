@@ -1,39 +1,37 @@
-# 使い方
-## このレポジトリをコピーする
+# lp-s3sync-repo-sample
+## lp-s3sync-repo-sampleとは？
+gatsbyJSで作った静的ページ(htmlファイルやCSSファイル)を本番環境用S3とテスト環境用S3にコピーする際に、簡単に作成できるようにしたものです。
+GitHub Actionsを利用してます。
+
+## 使い方
+### このレポジトリをコピーする
 ```
 $ git clone git@github.com:masato-kataoka/lp-s3sync-repo-sample.git
 ```
-## GitHub上にレポジトリ作成する
+### GitHub上にレポジトリ作成する
 GitHubの https://github.com/new に接続してレポジトリを作る。
 
-## 作ったレポジトリをコピーする
-作ったレポジトリをgit cloneします。
+### 作ったレポジトリをコピーする
+作ったレポジトリをgit cloneする。
 
-## デフォルトブランチを変更する
-### staging-mainブランチを作る
+### staging-mainブランチを作り、GitHubに登録する
 ```
 $ git checkout -b staging-main
-```
-### staging-mainブランチをGitHubに登録する
-```
 $ git push -u origin staging-main
 ```
 ### staging-mainブランチをデフォルトブランチにする
 作ったレポジトリからSettings→Branchesにアクセスした後、そこにある「Default branch」の`main`を staging-main に変更する。
 
-## ファイルをコピーする
+### ファイルをコピーする
 .github/workflow/ディレクトリとその中にあるファイルを、作ったレポジトリにコピーする
 ```
 $ cp -pr lp-s3sync-repo-sample/.github/workflows/*.yml s3-sync-repo/.github/workflows/
 ```
 
-## gatsby.jsの用意
-git cloneしてきたディレクトリ内でgatsby.jsの導入を行う。
+### GatsbyJSの用意
+git cloneしてきたディレクトリ内でGatsbyJSの導入を行う。
 ```
 $ npm install -g gatsby-cli
-```
-## gatsby newの実行
-```
 $ gatsby new (サイト名)
 ```
 途中でyarnかnpmのどちらを使うか聞かれるが、このサンプルを使う場合はyarnを選択する。
@@ -44,3 +42,14 @@ $ gatsby new (サイト名)
     npm
 ```
 
+### S3にコピーする時に利用するIAMユーザ作成
+### シークレット情報を登録する
+`Settings`→`Secrets`にアクセス
+
+
+|項目|値|
+|:-:|:-:|
+|AWS_ACCESS_KEY_ID|IAMユーザのACCESS_KEY_ID|
+|AWS_SECRET_ACCESS_KEY|IAMユーザのSECRET_ACCESS_KEY|
+|STAGING_S3_BUCKET|テスト環境のS3バケット|
+|S3_BUCKET|本番環境のS3バケット|
