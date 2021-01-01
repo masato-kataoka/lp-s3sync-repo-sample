@@ -6,7 +6,7 @@ $ git clone git@github.com:masato-kataoka/lp-s3sync-repo-sample.git (新しい�
 ```
 ### push先のURLを変更する
 ```
-$ git remote set-url origin (自分で作ったレポジトリ名)
+$ git remote set-url origin (新しいレポジトリ名)
 ```
 ## gatsby.jsの用意
 git cloneしてきたディレクトリ内でgatsby.jsの導入を行う。
