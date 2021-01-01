@@ -9,11 +9,6 @@ GitHubの https://github.com/new に接続してレポジトリを作る。
 ## 作ったレポジトリをコピーする
 作ったレポジトリをgit cloneします。
 
-## ファイルをコピーする
-.github/workflow/ディレクトリとその中にあるファイルを、作ったレポジトリにコピーする
-```
-$ cp -pr lp-s3sync-repo-sample/.github/workflows/*.yml s3-sync-repo/.github/workflows/
-```
 ## デフォルトブランチを変更する
 ### staging-mainブランチを作る
 ```
@@ -25,6 +20,12 @@ $ git push -u origin staging-main
 ```
 ### staging-mainブランチをデフォルトブランチにする
 作ったレポジトリからSettings→Branchesにアクセスした後、そこにある「Default branch」の`main`を staging-main に変更する。
+
+## ファイルをコピーする
+.github/workflow/ディレクトリとその中にあるファイルを、作ったレポジトリにコピーする
+```
+$ cp -pr lp-s3sync-repo-sample/.github/workflows/*.yml s3-sync-repo/.github/workflows/
+```
 
 ## gatsby.jsの用意
 git cloneしてきたディレクトリ内でgatsby.jsの導入を行う。
