@@ -16,6 +16,7 @@ GitHubの https://github.com/new に接続してレポジトリを作る。
 
 ### テスト環境用のブランチを作り、GitHubに登録する
 テスト環境用のブランチを作り、それをGitHubに登録します。ここでは`staging-main`というブランチがテスト環境用のブランチになります。
+
 ```
 $ git checkout -b staging-main
 $ git push -u origin staging-main

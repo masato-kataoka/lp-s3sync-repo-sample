@@ -2,12 +2,13 @@ name: Amazon LP File sync(producton)
 on:
   pull_request:
     branches:
-      - master
-    types: closed
+      - main
+    types: [closed]
       
 jobs:
   UploadStaticFiles:
     name: Upload static files
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
