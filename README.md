@@ -14,13 +14,14 @@ GitHubの https://github.com/new に接続してレポジトリを作る。
 ### 作ったレポジトリをコピーする
 作ったレポジトリをgit cloneする。
 
-### staging-mainブランチを作り、GitHubに登録する
+### テスト環境用のブランチを作り、GitHubに登録する
+テスト環境用のブランチを作り、それをGitHubに登録します。ここでは`staging-main`というブランチがテスト環境用のブランチになります。
 ```
 $ git checkout -b staging-main
 $ git push -u origin staging-main
 ```
-### staging-mainブランチをデフォルトブランチにする
-作ったレポジトリからSettings→Branchesにアクセスした後、そこにある「Default branch」の`main`を staging-main に変更する。
+### テスト環境のブランチをデフォルトブランチにする
+作ったレポジトリからSettings→Branchesにアクセスした後、そこにある「Default branch」の`main`を`staging-main`に変更します。
 
 ### ファイルをコピーする
 .github/workflow/ディレクトリとその中にあるファイルを、作ったレポジトリにコピーする
